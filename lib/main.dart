@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       title: 'Ticket Shadow Support',
+      debugShowCheckedModeBanner: false, // Opcional: para quitar el banner de debug
       // Usamos el modo oscuro para que los colores base oscuros se apliquen correctamente
       theme: ThemeData(
         brightness: Brightness.dark,
@@ -81,23 +82,27 @@ class _LoginPageState extends State<LoginPage> {
 
   void _login() {
     final email = _emailController.text;
-    final password = _passwordController.text;
+    // final password = _passwordController.text;
 
+    // Lógica de inicio de sesión
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text('Iniciando sesión con: $email'),
         duration: const Duration(seconds: 2),
       ),
     );
-    print('Email: $email, Password: $password');
   }
 
   @override
   Widget build(BuildContext context) {
+    // Extraemos el color de acento del tema
+    final Color accentBlue = Theme.of(context).colorScheme.primary; 
+    
     // El 'Stack' es necesario para colocar la geometría de fondo hexagonal
     return Scaffold(
+      // Quita el espacio del AppBar
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(0.0), // Elimina el AppBar
+        preferredSize: const Size.fromHeight(0.0),
         child: AppBar(),
       ),
       body: Stack(
@@ -135,17 +140,27 @@ class _LoginPageState extends State<LoginPage> {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  // INICIO: Logo/Marca - Usando la imagen 'assets/logo.png'
+                  // INICIO: Logo/Marca
                   Column(
                     children: [
-                      // <--- Aquí se inserta el widget Image.asset --->
+                      // Logotipo
                       Image.asset(
                         'assets/SinFondoLogotipo.png', 
-                        width: 200, // Ajusta el tamaño según sea necesario
-                        // Si el logo es blanco, puedes usar ColorFilter para asegurarte que se vea
-                        // color: Colors.white, 
-                        // colorBlendMode: BlendMode.modulate,
+                        width: 200, 
                       ),
+                      
+                      // Texto de la empresa
+                      const SizedBox(height: 10), 
+                      Text(
+                        'Shadow Ticket Support',
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: accentBlue, 
+                          letterSpacing: 1.5,
+                        ),
+                      ),
+                      
                       const SizedBox(height: 80),
                     ],
                   ),
@@ -167,7 +182,7 @@ class _LoginPageState extends State<LoginPage> {
                   TextFormField(
                     controller: _emailController,
                     keyboardType: TextInputType.emailAddress,
-                    style: const TextStyle(color: Colors.black), // Texto de entrada negro
+                    style: const TextStyle(color: Colors.black), 
                     decoration: const InputDecoration(
                       hintText: 'Correo Electrónico',
                       prefixIcon: Icon(Icons.person, color: Colors.black54),
@@ -179,7 +194,7 @@ class _LoginPageState extends State<LoginPage> {
                   TextFormField(
                     controller: _passwordController,
                     obscureText: _obscureText,
-                    style: const TextStyle(color: Colors.black), // Texto de entrada negro
+                    style: const TextStyle(color: Colors.black), 
                     decoration: InputDecoration(
                       hintText: 'Contraseña',
                       prefixIcon: const Icon(Icons.lock, color: Colors.black54),
@@ -199,27 +214,22 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   const SizedBox(height: 30),
 
-                  // Botón "Entrar" (Estilo ya definido en el tema)
+                  // Botón "Entrar"
                   ElevatedButton(
                     onPressed: _login,
                     child: const Text('Entrar'),
                   ),
                   const SizedBox(height: 20),
                   
-                  // Enlaces de Opción (Olvidaste y Registrarse)
+                  // Enlaces de Opción (Olvidaste)
                   Align(
                     alignment: Alignment.center,
-                    child: Column(
-                      children: [
-                        TextButton(
-                          onPressed: () {},
-                          child: const Text(
-                            '¿Olvidaste tu contraseña?',
-                            style: TextStyle(color: Colors.white70),
-                          ),
-                        ),
-                       
-                      ],
+                    child: TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        '¿Olvidaste tu contraseña?',
+                        style: TextStyle(color: Colors.white70),
+                      ),
                     ),
                   ),
                 ],
