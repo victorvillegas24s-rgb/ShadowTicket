@@ -1,0 +1,52 @@
+═══════════════════════════════════════════════════════════════
+  ⚠️  NODE.JS NO ESTÁ INSTALADO
+═══════════════════════════════════════════════════════════════
+
+Para ejecutar este proyecto React Native con Expo, necesitas
+instalar Node.js primero.
+
+═══════════════════════════════════════════════════════════════
+  PASOS PARA INSTALAR Y EJECUTAR:
+═══════════════════════════════════════════════════════════════
+
+1. INSTALAR NODE.JS
+   ───────────────────────────────────────────────────────────
+   • Se abrió una ventana del navegador con la página de Node.js
+   • Si no se abrió, ve a: https://nodejs.org/
+   • Descarga la versión LTS (Long Term Support)
+   • Ejecuta el instalador
+   • Acepta todas las opciones por defecto
+   • IMPORTANTE: Marca "Add to PATH" si aparece
+
+2. REINICIAR LA TERMINAL
+   ───────────────────────────────────────────────────────────
+   • Cierra completamente PowerShell/CMD
+   • Vuelve a abrir PowerShell/CMD
+   • Navega a esta carpeta:
+     cd "C:\Users\Yecsa\Documents\flutter_application_1"
+
+3. INSTALAR DEPENDENCIAS (Solo la primera vez)
+   ───────────────────────────────────────────────────────────
+   Ejecuta:
+   npm install
+
+   O doble clic en: install-dependencies.bat
+
+4. INICIAR EL PROYECTO
+   ───────────────────────────────────────────────────────────
+   Ejecuta:
+   npm start
+
+   O doble clic en: start-expo.bat
+
+5. CONECTAR CON EXPO GO
+   ───────────────────────────────────────────────────────────
+   • Instala "Expo Go" en tu celular
+   • Escanea el código QR que aparece en la terminal
+   • ¡Listo! La app se cargará en tu dispositivo
+
+═══════════════════════════════════════════════════════════════
+  ⏱️  Tiempo estimado: 5-10 minutos
+═══════════════════════════════════════════════════════════════
+
+

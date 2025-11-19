@@ -1,0 +1,40 @@
+═══════════════════════════════════════════════════════════════
+  TICKET SHADOW SUPPORT - INICIO RÁPIDO CON EXPO GO
+═══════════════════════════════════════════════════════════════
+
+PASO 1: INSTALAR NODE.JS
+───────────────────────────────────────────────────────────────
+1. Ve a: https://nodejs.org/
+2. Descarga la versión LTS (Long Term Support)
+3. Instala Node.js (incluye npm automáticamente)
+4. Reinicia tu terminal después de instalar
+
+PASO 2: INSTALAR DEPENDENCIAS
+───────────────────────────────────────────────────────────────
+Opción A: Doble clic en "install-dependencies.bat"
+Opción B: Abre PowerShell aquí y ejecuta:
+          npm install
+
+PASO 3: INICIAR EL PROYECTO
+───────────────────────────────────────────────────────────────
+Opción A: Doble clic en "start-expo.bat"
+Opción B: Abre PowerShell aquí y ejecuta:
+          npm start
+
+PASO 4: CONECTAR CON EXPO GO
+───────────────────────────────────────────────────────────────
+1. Instala "Expo Go" en tu celular:
+   - iOS: App Store
+   - Android: Google Play Store
+
+2. Escanea el código QR que aparece en la terminal:
+   - iOS: Usa la cámara del iPhone
+   - Android: Abre Expo Go y escanea el QR
+
+3. ¡Listo! La app se cargará en tu dispositivo
+
+═══════════════════════════════════════════════════════════════
+  ¿PROBLEMAS? Lee GUIA_INICIO_RAPIDO.md
+═══════════════════════════════════════════════════════════════
+
+
